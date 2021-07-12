@@ -45,7 +45,8 @@ class Blockchain:
                 checkproof = True
             else:
                 newproof += 1
-        
+            # print (newproof)
+            # print(checkproof) 
         return newproof
 
     def hash(self, block):
@@ -126,11 +127,12 @@ def mineblock():
     block = blockchain.createblock(proof, prevhash)
 
     # Sending the response to Postman API to display it
-    response = {'message': "Congratulations, You just mined a block !",
+    response = {'message': "Selamat Anda telah menambang blockchain !",
                 'index': block['index'],
                 'timestamp': block['timestamp'],
                 'proof': block['proof'],
-                'prevhash': block['prevhash']}
+                'prevhash': block['prevhash'],
+                }
 
     return jsonify(response), 200
 
